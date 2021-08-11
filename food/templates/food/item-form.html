@@ -1,0 +1,32 @@
+{% extends "food/base.html" %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-center bg-info fw-bold h1">
+                    <div class="card-title">Add item</div>
+                </div>
+                <div class="card-body">
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="form-group p-1 text-center fw-bolder text-dark">
+                            {{field.name}}
+                            <br>
+                            {{field}}
+                        </div>
+                        {% endfor %}
+                        <br>
+                        <button class="btn-info offset-md-5 py-1 my-1" type="submit">Add </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
